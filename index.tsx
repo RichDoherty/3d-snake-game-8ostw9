@@ -30,7 +30,7 @@ class App extends Component<AppProps, AppState> {
           OUTPUT: <br />
         </pre>
         {
-           <SnakeTests />
+           // <SnakeTests />
         }
         {
           // <DuckTests />
