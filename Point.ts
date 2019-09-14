@@ -7,10 +7,10 @@ class Point {
     this.xcoord = x;
     this.ycoord = y;
   }
-  public get xcoordinate() {
+  public get x() {
     return this.xcoord;
   }
-  public get ycoordinate() {
+  public get y() {
     return this.ycoord;
   }
 }

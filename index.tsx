@@ -44,3 +44,28 @@ render(<App />, document.getElementById('root'));
 
 // Add display statements below
 display("Let's get started with React TypeScript!");
+
+let snake1 = new Snake;
+display(JSON.stringify(snake1.position));
+snake1.move();
+snake1.turnLeft();
+snake1.move();
+display(JSON.stringify(snake1.position));
+snake1.move();
+snake1.turnLeft();
+snake1.move();
+snake1.move();
+display(JSON.stringify(snake1.position));
+snake1.turnRight();
+snake1.move();
+snake1.move();
+snake1.turnRight();
+snake1.move();
+snake1.move();
+snake1.turnRight();
+snake1.move();
+snake1.move();
+snake1.turnRight();
+snake1.move();
+snake1.move();
+display(JSON.stringify(snake1.position));
