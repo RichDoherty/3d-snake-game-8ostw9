@@ -5,6 +5,7 @@ import './style.css';
 import display from './display';
 import Snake from './Snake';
 import SnakeTests from './SnakeTests';
+import WorldMode1 from './WorldMode1';
 
 interface AppProps { }
 interface AppState {
@@ -47,25 +48,33 @@ display("Let's get started with React TypeScript!");
 
 let snake1 = new Snake;
 display(JSON.stringify(snake1.position));
-snake1.move();
+snake1.move(1);
 snake1.turnLeft();
-snake1.move();
+snake1.move(1);
 display(JSON.stringify(snake1.position));
-snake1.move();
+snake1.move(1);
 snake1.turnLeft();
-snake1.move();
-snake1.move();
+snake1.move(1);
+snake1.move(1);
 display(JSON.stringify(snake1.position));
 snake1.turnRight();
-snake1.move();
-snake1.move();
+snake1.move(1);
+snake1.move(1);
 snake1.turnRight();
-snake1.move();
-snake1.move();
+snake1.move(1);
+snake1.move(1);
 snake1.turnRight();
-snake1.move();
-snake1.move();
+snake1.move(1);
+snake1.move(1);
 snake1.turnRight();
-snake1.move();
-snake1.move();
+snake1.move(1);
+snake1.move(1);
 display(JSON.stringify(snake1.position));
+
+display("");
+
+let snake2 = new Snake();
+let worldMode1 = new WorldMode1(snake2);
+worldMode1.update(1);
+snake2.turnLeft();
+worldMode1.update(1);
