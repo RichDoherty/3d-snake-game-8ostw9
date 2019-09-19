@@ -2,11 +2,11 @@ import display from './display';
 import Point from './Point';
 import Snake from './Snake';
 
-class WorldMode1 {
+class WorldModel {
   private snake:Snake;
 
-  constructor(snake:Snake) {
-    this.snake = snake;
+  constructor(startSnake:Snake) {
+    this.snake = startSnake;
   }
 
   public update(steps:number) {
@@ -18,4 +18,4 @@ class WorldMode1 {
   }
 }
 
-export default WorldMode1;
+export default WorldModel;

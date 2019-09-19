@@ -5,7 +5,7 @@ import './style.css';
 import display from './display';
 import Snake from './Snake';
 import SnakeTests from './SnakeTests';
-import WorldMode1 from './WorldMode1';
+import WorldModel from './WorldModel';
 
 interface AppProps { }
 interface AppState {
@@ -74,7 +74,8 @@ display(JSON.stringify(snake1.position));
 display("");
 
 let snake2 = new Snake();
-let worldMode1 = new WorldMode1(snake2);
-worldMode1.update(1);
+let worldModel = new WorldModel(snake2);
+worldModel.update(1);
 snake2.turnLeft();
-worldMode1.update(1);
+worldModel.update(1);
+display(worldModel.getSnake);
