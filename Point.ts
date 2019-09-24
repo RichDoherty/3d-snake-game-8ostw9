@@ -3,7 +3,7 @@ import display from './display';
 class Point {
   private xcoord: number;
   private ycoord: number;
-  constructor(x, y) {
+  constructor(x:number, y:number) {
     this.xcoord = x;
     this.ycoord = y;
   }

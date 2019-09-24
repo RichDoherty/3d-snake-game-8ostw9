@@ -9,12 +9,19 @@
     "react-dom": "^16.8.0"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
+    "start": "react-scripts-ts start & npm run docs",
     "build": "react-scripts-ts build",
+    "docs": "typedoc src/Car.ts --out docs/ --excludeExternals",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
-    "react-scripts-ts": "latest"
+    "react-scripts-ts": "latest",
+    "typedoc": "^0.13.0",
+    "typescript": "^3.5.3",
+    "@types/jasmine": "^3.3.13",
+    "jasmine": "^3.4.0",
+    "nyc": "^14.1.1",
+    "ts-node": "^8.3.0"
   }
 }
