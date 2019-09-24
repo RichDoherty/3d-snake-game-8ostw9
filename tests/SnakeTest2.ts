@@ -1,0 +1,1 @@
+import Snake from './Snake';

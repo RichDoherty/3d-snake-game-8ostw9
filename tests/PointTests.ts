@@ -1,0 +1,9 @@
+import Point from './Point';
+
+describe("Point", function() {
+  it("exists", function() {
+    let p = new Point(0,0);
+    expect(p.x).toBe(0);
+    expect(p.y).toBe(0);
+  )};
+});

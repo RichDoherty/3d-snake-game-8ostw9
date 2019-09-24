@@ -30,3 +30,5 @@ class SnakeController {
     return this.snakeWorld.getHeight;
   }
 }
+
+export default SnakeController;
