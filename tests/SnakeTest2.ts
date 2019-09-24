@@ -4,11 +4,11 @@ import Point from '../Point';
 describe("Point", function() {
   it("has a working getter for position", function() {
     let s = new Snake();
-    expect(s.position).toBeDefined;
+    expect(s.position).toBeDefined();
   });
   it("has a working getter for direction", function() {
     let s = new Snake();
-    expect(s.direction).toBeDefined;
+    expect(s.direction).toBeDefined();
   });
   it("moves", function() {
     let s = new Snake();
