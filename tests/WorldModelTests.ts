@@ -3,6 +3,12 @@ import Snake from '../Snake';
 import WorldModel from '../WorldModel';
 
 describe("World Model", function() {
+  it("has a working update method", function() {
+    let s = new Snake();
+    let w = new WorldModel(s);
+    w.update(5);
+    expect(s.position.y).toBe(5);
+  });
   it("has a working getter for the snake", function() {
     let s = new Snake();
     let w = new WorldModel(s);
