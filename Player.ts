@@ -4,9 +4,9 @@ import WorldModel from './WorldModel';
 import SnakeController from './SnakeController'
 
 abstract class Player {
-  private sc_: SnakeController;
+  protected sc: SnakeController;
   constructor(controller:SnakeController) {
-    this.sc_ = controller;
+    this.sc = controller;
   }
 }
 
