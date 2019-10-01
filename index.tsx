@@ -36,6 +36,7 @@ class App extends Component<AppProps, AppState> {
         {
           // <DuckTests />
         }
+        <canvas width = "320" height = "480" id = "game"></canvas>
       </div>
     );
   }
@@ -45,37 +46,3 @@ render(<App />, document.getElementById('root'));
 
 // Add display statements below
 display("Let's get started with React TypeScript!");
-
-let snake1 = new Snake;
-display(JSON.stringify(snake1.position));
-snake1.move(1);
-snake1.turnLeft();
-snake1.move(1);
-display(JSON.stringify(snake1.position));
-snake1.move(1);
-snake1.turnLeft();
-snake1.move(1);
-snake1.move(1);
-display(JSON.stringify(snake1.position));
-snake1.turnRight();
-snake1.move(1);
-snake1.move(1);
-snake1.turnRight();
-snake1.move(1);
-snake1.move(1);
-snake1.turnRight();
-snake1.move(1);
-snake1.move(1);
-snake1.turnRight();
-snake1.move(1);
-snake1.move(1);
-display(JSON.stringify(snake1.position));
-
-display("");
-
-let snake2 = new Snake();
-let worldModel = new WorldModel(snake2);
-worldModel.update(1);
-snake2.turnLeft();
-worldModel.update(1);
-display(worldModel.getSnake);
