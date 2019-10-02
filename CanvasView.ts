@@ -20,3 +20,5 @@ class CanvasView implements View {
     this.canvas.height = w.getHeight * this.scaler;
   }
 }
+
+export default CanvasView;
