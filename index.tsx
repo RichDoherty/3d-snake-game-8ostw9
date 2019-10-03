@@ -6,6 +6,8 @@ import display from './display';
 import Snake from './Snake';
 import SnakeTests from './SnakeTests';
 import WorldModel from './WorldModel';
+import View from './IView';
+import CanvasView from './CanvasView';
 
 interface AppProps { }
 interface AppState {
@@ -46,3 +48,5 @@ render(<App />, document.getElementById('root'));
 
 // Add display statements below
 display("Let's get started with React TypeScript!");
+
+let canvasTest = new CanvasView(15);

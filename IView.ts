@@ -4,7 +4,7 @@ import WorldModel from './WorldModel';
 import SnakeController from './SnakeController'
 
 interface View {
-  display: () => void;
+  display: (w:WorldModel) => void;
 }
 
 export default View;

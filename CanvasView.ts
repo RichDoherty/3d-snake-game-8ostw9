@@ -18,6 +18,7 @@ class CanvasView implements View {
   public display(w:WorldModel) {
     this.canvas.width = w.getWidth * this.scaler;
     this.canvas.height = w.getHeight * this.scaler;
+    this.context.fillRect(this.scaler, this.scaler);
   }
 }
 
