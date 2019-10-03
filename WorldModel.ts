@@ -12,8 +12,8 @@ class WorldModel {
 
   constructor(startSnake:Snake) {
     this.snake = startSnake;
-    this.width = 20;
-    this.height = 20;
+    this.width = 10;
+    this.height = 10;
     this.view = null;
   }
 
@@ -32,8 +32,8 @@ class WorldModel {
     return this.height;
   }
 
-  public set setView(view:CanvasView) {
-    this.view = view;
+  public set setView(newView:CanvasView) {
+    this.view = newView;
   }
 }
 

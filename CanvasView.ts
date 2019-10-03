@@ -9,6 +9,7 @@ class CanvasView implements View {
   private canvas;
   private context;
   private scaler:number;
+
   constructor(scaler:number) {
     this.scaler = scaler;
     this.canvas = document.createElement("canvas");
@@ -18,6 +19,7 @@ class CanvasView implements View {
   public display(w:WorldModel) {
     this.canvas.width = w.getWidth * this.scaler;
     this.canvas.height = w.getHeight * this.scaler;
+    this.context.fillStyle = "green";
     this.context.fillRect(this.scaler, this.scaler);
   }
 }
