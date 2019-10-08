@@ -12,16 +12,16 @@ describe("World Model", function() {
   it("has a working getter for the snake", function() {
     let s = new Snake();
     let w = new WorldModel(s);
-    expect(w.getSnake).toBeDefined();
+    expect(w.snake).toBeDefined();
   });
   it("has a working getter for width", function() {
     let s = new Snake();
     let w = new WorldModel(s);
-    expect(w.getWidth).toBeDefined();
+    expect(w.width).toBe(10);
   });
   it("has a working getter for height", function() {
     let s = new Snake();
     let w = new WorldModel(s);
-    expect(w.getHeight).toBeDefined();
+    expect(w.height).toBe(20);
   });
 });
