@@ -8,7 +8,7 @@ class SnakeController {
   private slitherer: Snake;
   /**
    * Creates a controller.
-   * @param world - A world to be used 
+   * @param world - A world to be used.
    * @param snake - Snake to be controlled.
    */
   constructor(world:WorldModel, snake:Snake) {

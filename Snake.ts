@@ -8,7 +8,7 @@ class Snake {
   private currentPosition: Point;
   private currentDirection: number;
   /**
-   * Create a snake.
+   * Creates a snake.
    */
   constructor() {
     this.currentPosition = new Point(0, 0);
