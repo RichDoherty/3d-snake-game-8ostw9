@@ -17,10 +17,10 @@ class CanvasView implements View {
     this.context = this.canvas.getContext("2d");
   }
   public display(w:WorldModel) {
-    this.canvas.width = w.getWidth * this.scaler;
-    this.canvas.height = w.getHeight * this.scaler;
+    this.canvas.width = w.width * this.scaler;
+    this.canvas.height = w.height * this.scaler;
     this.context.fillStyle = "green";
-    this.context.fillRect(this.scaler, this.scaler);
+    this.context.fillRect(this.scaler, this.scaler, this.scaler, this.scaler);
   }
 }
 

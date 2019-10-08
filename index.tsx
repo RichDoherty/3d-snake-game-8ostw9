@@ -38,7 +38,7 @@ class App extends Component<AppProps, AppState> {
         {
           // <DuckTests />
         }
-        <canvas width = "320" height = "480" id = "game"></canvas>
+       
       </div>
     );
   }
@@ -51,5 +51,6 @@ display("Let's get started with React TypeScript!");
 
 let snakeTest = new Snake();
 let world = new WorldModel(snakeTest);
-let canvasTest = new CanvasView(15);
+let canvasTest = new CanvasView(25);
 world.view = canvasTest;
+canvasTest.display(world);

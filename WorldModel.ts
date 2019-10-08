@@ -13,7 +13,7 @@ class WorldModel {
   constructor(startSnake:Snake) {
     this.worldSnake = startSnake;
     this.worldWidth = 10;
-    this.worldHeight = 10;
+    this.worldHeight = 20;
     this.worldView = null;
   }
 
