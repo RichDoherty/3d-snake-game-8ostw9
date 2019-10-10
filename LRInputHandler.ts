@@ -30,3 +30,5 @@ class LRInputHandler implements InputHandler {
     this.wasRightArrowPushed = false;
   }
 }
+
+export default LRInputHandler;
