@@ -13,6 +13,7 @@ abstract class Player {
   constructor(controller:SnakeController) {
     this.sc = controller;
   }
+  abstract makeTurn: () => void;
 }
 
 export default Player;
