@@ -4,7 +4,7 @@ import WorldModel from './WorldModel';
 import SnakeController from './SnakeController'
 import Player from './Player';
 import View from './IView';
-import InputHandler from './iInputHandler'
+import InputHandler from './iInputHandler';
 
 class LRInputHandler implements InputHandler {
   private wasLeftArrowPushed: boolean;
