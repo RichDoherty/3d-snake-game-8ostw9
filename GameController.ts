@@ -6,8 +6,9 @@ import Player from './Player';
 
 class GameController {
   private worldModel:WorldModel;
-  private p1:Player;
-  private p2:Player;
+  private p1: Player;
+  private p2: Player;
+  
   constructor(w:WorldModel) {
     this.worldModel = w;
   }
