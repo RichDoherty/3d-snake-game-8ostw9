@@ -8,6 +8,7 @@ import SnakeTests from './SnakeTests';
 import WorldModel from './WorldModel';
 import View from './IView';
 import CanvasView from './CanvasView';
+import GameController from './GameController';
 
 interface AppProps { }
 interface AppState {
@@ -54,3 +55,5 @@ let world = new WorldModel(snakeTest);
 let canvasTest = new CanvasView(25);
 world.view = canvasTest;
 canvasTest.display(world);
+
+let gControl = new GameController(world);

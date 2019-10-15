@@ -20,9 +20,17 @@ class GameController {
   }
   public run() {
     let lastTime = 0;
-  }
-  public updateFrame() {
-    this.p1.makeTurn();
-    this.p2.makeTurn();
+    let updateFrame = milliseconds => {
+      this.p1.makeTurn();
+      this.p2.makeTurn();
+      if(milliseconds > lastTime + 250) { 
+        this.worldModel.update(1);
+        lastTime = lastTime + 250;
+      }
+      requestAnimationFrame(updateFrame);
+    }
+    requestAnimationFrame(updateFrame);
   }
 }
+
+export default GameController;
