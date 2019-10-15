@@ -65,3 +65,5 @@ let gControl = new GameController(world);
 let lrIh = new LRInputHandler;
 let hPlayer = new HumanPlayer(sControl, lrIh);
 gControl.player1 = hPlayer;
+
+//gControl.run();
