@@ -8,7 +8,11 @@ import SnakeTests from './SnakeTests';
 import WorldModel from './WorldModel';
 import View from './IView';
 import CanvasView from './CanvasView';
+import SnakeController from './SnakeController';
 import GameController from './GameController';
+import HumanPlayer from './HumanPlayer'
+import InputHandler from './IInputHandler'
+import LRInputHandler from './LRInputHandler'
 
 interface AppProps { }
 interface AppState {
@@ -56,4 +60,7 @@ let canvasTest = new CanvasView(25);
 world.view = canvasTest;
 canvasTest.display(world);
 
+let sControl = new SnakeController(world, snakeTest);
 let gControl = new GameController(world);
+let lrIh = new LRInputHandler;
+gControl.player1(new HumanPlayer())
