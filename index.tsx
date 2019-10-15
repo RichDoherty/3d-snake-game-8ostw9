@@ -10,9 +10,10 @@ import View from './IView';
 import CanvasView from './CanvasView';
 import SnakeController from './SnakeController';
 import GameController from './GameController';
-import HumanPlayer from './HumanPlayer'
-import InputHandler from './IInputHandler'
-import LRInputHandler from './LRInputHandler'
+import HumanPlayer from './HumanPlayer';
+import InputHandler from './IInputHandler';
+import LRInputHandler from './LRInputHandler';
+import AvoidWallsPlayer from './AvoidWallsPlayer';
 
 interface AppProps { }
 interface AppState {
@@ -56,14 +57,20 @@ display("Let's get started with React TypeScript!");
 
 let snakeTest = new Snake();
 let world = new WorldModel(snakeTest);
+
+let avoidSnake = new Snake();
+
 let canvasTest = new CanvasView(25);
 world.view = canvasTest;
 canvasTest.display(world);
 
 let sControl = new SnakeController(world, snakeTest);
+let sControl2 = new SnakeController(world, avoidSnake);
 let gControl = new GameController(world);
 let lrIh = new LRInputHandler;
 let hPlayer = new HumanPlayer(sControl, lrIh);
+let aPlayer = new AvoidWallsPlayer(sControl2);
 gControl.player1 = hPlayer;
+gControl.player2 = aPlayer;
 
 //gControl.run();

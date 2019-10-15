@@ -5,7 +5,6 @@ import SnakeController from './SnakeController';
 import Player from './Player';
 import InputHandler from './iInputHandler';
 
-
 class HumanPlayer extends Player {
   private controller:SnakeController;
   private handler:InputHandler;
