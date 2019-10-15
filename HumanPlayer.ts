@@ -25,3 +25,5 @@ class HumanPlayer extends Player {
     }
   }
 }
+
+export default HumanPlayer;

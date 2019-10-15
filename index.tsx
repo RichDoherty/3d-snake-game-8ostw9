@@ -63,4 +63,5 @@ canvasTest.display(world);
 let sControl = new SnakeController(world, snakeTest);
 let gControl = new GameController(world);
 let lrIh = new LRInputHandler;
-gControl.player1(new HumanPlayer())
+let hPlayer = new HumanPlayer(sControl, lrIh);
+gControl.player1 = hPlayer;
