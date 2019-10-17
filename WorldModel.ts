@@ -30,7 +30,7 @@ class WorldModel {
   public update(steps:number) {
     this.worldSnake.move(steps);
     if(this.worldView !== null) { 
-      //display(2+2);
+      console.log(2+2);
       this.worldView.display(this); 
     }
   }

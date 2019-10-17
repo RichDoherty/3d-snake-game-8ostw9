@@ -75,4 +75,4 @@ gControl.player1 = hPlayer;
 
 //display(world.copy())
 
-gControl.run();
+//gControl.run();
