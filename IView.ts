@@ -3,7 +3,7 @@ import Snake from './Snake';
 import WorldModel from './WorldModel';
 import SnakeController from './SnakeController'
 
-/** Interface  */
+/** Interface for views */
 interface View {
   display: (w:WorldModel) => void;
 }

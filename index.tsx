@@ -60,7 +60,7 @@ let world = new WorldModel(snakeTest);
 
 let avoidSnake = new Snake();
 
-let canvasTest = new CanvasView(25);
+let canvasTest = new CanvasView(20);
 world.view = canvasTest;
 canvasTest.display(world);
 
