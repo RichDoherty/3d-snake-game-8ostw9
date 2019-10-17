@@ -20,13 +20,20 @@ class WorldModel {
     this.worldHeight = 20;
     this.worldView = null;
   }
+  public copy():WorldModel {
+    return this;
+  }
   /**
    * Moves the snake a certain distance.
    * @param steps - The number of spaces the snake will move.
    */
   public update(steps:number) {
     this.worldSnake.move(steps);
-    if(this.worldView !== null) { this.worldView.display(this); }
+    display(2+2);
+    if(this.worldView !== null) { 
+      display(2+2);
+      this.worldView.display(this); 
+    }
   }
   /**
    * Gets the snake.

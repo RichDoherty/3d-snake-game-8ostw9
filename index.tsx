@@ -73,4 +73,6 @@ let aPlayer = new AvoidWallsPlayer(sControl2);
 gControl.player1 = hPlayer;
 gControl.player2 = aPlayer;
 
+//display(world.copy())
+
 //gControl.run();
