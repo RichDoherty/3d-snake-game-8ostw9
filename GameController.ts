@@ -37,7 +37,7 @@ class GameController {
     let lastTime = 0;
     let updateFrame = milliseconds => {
       this.p1.makeTurn();
-      this.p2.makeTurn();
+      //this.p2.makeTurn();
       if(milliseconds > lastTime + 250) { 
         this.worldModel.update(1);
         lastTime = lastTime + 250;

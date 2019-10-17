@@ -29,9 +29,8 @@ class WorldModel {
    */
   public update(steps:number) {
     this.worldSnake.move(steps);
-    display(2+2);
     if(this.worldView !== null) { 
-      display(2+2);
+      //display(2+2);
       this.worldView.display(this); 
     }
   }
