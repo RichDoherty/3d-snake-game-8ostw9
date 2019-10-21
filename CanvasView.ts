@@ -26,8 +26,9 @@ class CanvasView implements View {
   public display(w:WorldModel) {
     this.canvas.width = w.width * this.scaler;
     this.canvas.height = w.height * this.scaler;
+    this.context.fillStyle = this.canvas.color;
     this.context.fillStyle = "green";
-    this.context.fillRect(this.scaler, this.scaler, this.scaler, this.scaler);
+    this.context.fillRect(2 * this.scaler, 2 * this.scaler, this.scaler, this.scaler);
   }
 }
 

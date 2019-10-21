@@ -23,13 +23,13 @@ class HumanPlayer extends Player {
    * Makes the snake turn when the player makes an input.
    */
   makeTurn():void {
-    if(this.handler.madeLeftMove) {
-      this.controller.turnSnakeLeft;
-      this.handler.resetLeftMove;
+    if(this.handler.madeLeftMove()) {
+      this.controller.turnSnakeLeft();
+      this.handler.resetLeftMove();
     }
-    if(this.handler.madeRightMove) {
-      this.controller.turnSnakeRight;
-      this.handler.resetRightMove;
+    if(this.handler.madeRightMove()) {
+      this.controller.turnSnakeRight();
+      this.handler.resetRightMove();
     }
   }
 }
