@@ -24,11 +24,11 @@ class CanvasView implements View {
    * Multiplies the world's width and height by the scaler and makes the snake appear on the canvas.
    */
   public display(w:WorldModel) {
+    this.context.fillStyle = this.canvas.color;
     this.canvas.width = w.width * this.scaler;
     this.canvas.height = w.height * this.scaler;
-    this.context.fillStyle = this.canvas.color;
     this.context.fillStyle = "green";
-    this.context.fillRect(2 * this.scaler, 2 * this.scaler, this.scaler, this.scaler);
+    this.context.fillRect(w.snake.position.x * this.scaler, w.snake.position.y * this.scaler, this.scaler, this.scaler);
   }
 }
 
