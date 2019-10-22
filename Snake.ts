@@ -54,7 +54,7 @@ class Snake {
     else { this.currentDirection = 2 }
   }
   public didCollide(s) {
-    
+    if(this.position === )
   }
   /**
    * Gets the point the snake is currently at.

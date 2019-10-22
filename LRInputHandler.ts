@@ -19,7 +19,10 @@ class LRInputHandler implements InputHandler {
       else if(event.key === "ArrowRight") { this.wasRightArrowPushed = true; }
     })
   }
-  /** Returns true or fals depending if the player made an input to turn left. */
+  /** 
+   * Returns true or fals depending if the player made an input to turn left. 
+   * @return if the left arrow was pushed since the last reset.
+  */
   public madeLeftMove() {
     return this.wasLeftArrowPushed;
   }
