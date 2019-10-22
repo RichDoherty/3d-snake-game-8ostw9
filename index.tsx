@@ -56,12 +56,14 @@ render(<App />, document.getElementById('root'));
 display("Let's get started with React TypeScript!");
 
 let snakeTest = new Snake();
-let world = new WorldModel(snakeTest);
+let world = new WorldModel();
+world.addSnake(snakeTest);
 
 let avoidSnake = new Snake();
+world.addSnake(avoidSnake);
 
 let canvasTest = new CanvasView(20);
-world.view = canvasTest;
+world.addView(canvasTest);
 canvasTest.display(world);
 
 let sControl = new SnakeController(world, snakeTest);
@@ -75,4 +77,4 @@ gControl.player2 = aPlayer;
 
 //display(world.copy())
 
-gControl.run();
+//gControl.run();

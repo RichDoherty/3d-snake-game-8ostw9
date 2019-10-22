@@ -13,6 +13,10 @@ class Point {
     this.xcoord = x;
     this.ycoord = y;
   }
+  public equals(p) {
+    if(this.xcoord === p.x && this.ycoord === p.y) { return true; }
+    else { return false; }
+  }
   /**
    * Gets the current x-value.
    */

@@ -5,24 +5,35 @@ import Point from './Point';
 
 /** Class representing a snake. */
 class Snake {
-  private currentPosition: Point;
+  private currentParts: Point[];
   private currentDirection: number;
+  private startPosition: Point;
+  private size: number;
   /**
    * Creates a snake.
    */
   constructor() {
-    this.currentPosition = new Point(0, 0);
+    this.startPosition = new Point(1,1);
+    this.currentParts = [this.startPosition];
     this.currentDirection = 1;
+    this.size = 3;
+    for(let i = 0; i < this.size-1; i++) {
+      this.currentParts.push(new Point(this.currentParts[i].x + 1, this.currentParts[i].y));
+    }
   }
   /**
    * Moves the snake a number of spaces.
    * @param numOfSquares - the number of spaces the snake moves.
    */
   public move(numOfSquares:number) {
-    if(this.currentDirection === 1) { this.currentPosition = new Point(this.currentPosition.x, this.currentPosition.y + numOfSquares) }
-    else if(this.currentDirection === 2) { this.currentPosition = new Point(this.currentPosition.x - numOfSquares, this.currentPosition.y) }
-    else if(this.currentDirection === 3) { this.currentPosition = new Point(this.currentPosition.x + numOfSquares, this.currentPosition.y) }
-    else { this.currentPosition = new Point(this.currentPosition.x, this.currentPosition.y - numOfSquares) }
+    for(let i = this.currentParts.length; i = 1; i--) {
+      let replacer = this.currentParts[i-1];
+      this.currentParts[i] = replacer;
+    }
+    if(this.currentDirection === 1) { this.currentParts[0] = new Point(this.currentParts[0].x, this.currentParts[0].y + numOfSquares) }
+    else if(this.currentDirection === 2) { this.currentParts[0] = new Point(this.currentParts[0].x - numOfSquares, this.currentParts[0].y) }
+    else if(this.currentDirection === 3) { this.currentParts[0] = new Point(this.currentParts[0].x + numOfSquares, this.currentParts[0].y) }
+    else { this.currentParts[0] = new Point(this.currentParts[0].x, this.currentParts[0].y - numOfSquares) }
   }
   /**
    * Turns the snake left.
@@ -42,11 +53,14 @@ class Snake {
     else if(this.currentDirection === 3) { this.currentDirection = 4 }
     else { this.currentDirection = 2 }
   }
+  public didCollide(s) {
+    
+  }
   /**
    * Gets the point the snake is currently at.
    */
   public get position() {
-    return this.currentPosition;
+    return this.currentParts[0];
   }
   /**
    * Gets the current direction of the snake.
