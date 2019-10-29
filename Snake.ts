@@ -26,7 +26,7 @@ class Snake {
    * @param numOfSquares - the number of spaces the snake moves.
    */
   public move(numOfSquares:number) {
-    for(let i = this.currentParts.length; i > 0; i--) {
+    for(let i = this.currentParts.length; i = 0; i--) {
       let replacer = this.currentParts[i-1];
       this.currentParts[i] = replacer;
     }
@@ -73,7 +73,7 @@ class Snake {
   public get direction() {
     return this.currentDirection;
   }
-  
+
   public get allParts() {
     return this.currentParts;
   }
