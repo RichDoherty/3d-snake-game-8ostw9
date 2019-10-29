@@ -12,7 +12,6 @@ class WorldModel {
   private allViews: View[];
   /**
    * Creates a world model.
-   * @param startSnake - Snake to be used in the model.
    */
   constructor() {
     this.allSnakes = [];
@@ -35,7 +34,7 @@ class WorldModel {
     }
   }
   /**
-   * Gets the snake.
+   * Gets the list of snakes.
    */
   public get snakeList() {
     return this.allSnakes;
