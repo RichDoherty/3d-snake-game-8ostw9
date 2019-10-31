@@ -27,10 +27,10 @@ class CanvasView implements View {
     this.context.fillStyle = this.canvas.color;
     this.canvas.width = w.width * this.scaler;
     this.canvas.height = w.height * this.scaler;
-    this.context.fillStyle = "green";
+    this.context.fillStyle = "orange";
     for(let i = 0; i < w.snakeList.length; i++) {
       for(let j = 0; j < w.snakeList[i].allParts.length; j++) {
-        this.context.fillRect(w.snakeList[i].position.x * this.scaler, w.snakeList[i].position.y+j * this.scaler, this.scaler, this.scaler);
+        this.context.fillRect(w.snakeList[i].allParts[j].x * this.scaler, w.snakeList[i].allParts[j].y * this.scaler, this.scaler, this.scaler);
       }
     }
   }

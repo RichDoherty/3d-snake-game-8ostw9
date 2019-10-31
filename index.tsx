@@ -66,15 +66,13 @@ let canvasTest = new CanvasView(20);
 world.addView(canvasTest);
 canvasTest.display(world);
 
-let sControl = new SnakeController(world, snakeTest);
-let sControl2 = new SnakeController(world, avoidSnake);
+let sControl = new SnakeController(world, world.snakeList[0]);
+let sControl2 = new SnakeController(world, world.snakeList[1]);
 let gControl = new GameController(world);
 let lrIh = new LRInputHandler;
 let hPlayer = new HumanPlayer(sControl, lrIh);
 let aPlayer = new AvoidWallsPlayer(sControl2);
 gControl.player1 = hPlayer;
 gControl.player2 = aPlayer;
-
-//display(world.copy())
 
 //gControl.run();

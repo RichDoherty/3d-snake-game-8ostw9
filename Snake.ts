@@ -16,9 +16,9 @@ class Snake {
     this.startPosition = new Point(1,1);
     this.currentParts = [this.startPosition];
     this.currentDirection = 1;
-    this.size = 3;
+    this.size = 4;
     for(let i = 0; i < this.size-1; i++) {
-      this.currentParts.push(new Point(this.currentParts[i].x + 1, this.currentParts[i].y));
+      this.currentParts.push(new Point(this.currentParts[i].x, this.currentParts[i].y +  1));
     }
   }
   /**
@@ -26,9 +26,8 @@ class Snake {
    * @param numOfSquares - the number of spaces the snake moves.
    */
   public move(numOfSquares:number) {
-    for(let i = this.currentParts.length; i = 0; i--) {
-      let replacer = this.currentParts[i-1];
-      this.currentParts[i] = replacer;
+    for(let i = this.currentParts.length-1; i > 0; i--) {
+      this.currentParts[i] = this.currentParts[i-1];
     }
     if(this.currentDirection === 1) { this.currentParts[0] = new Point(this.currentParts[0].x, this.currentParts[0].y + numOfSquares) }
     else if(this.currentDirection === 2) { this.currentParts[0] = new Point(this.currentParts[0].x - numOfSquares, this.currentParts[0].y) }
@@ -54,7 +53,7 @@ class Snake {
     else { this.currentDirection = 2 }
   }
   public didCollide(s) {
-    if(this.position === s.position) {
+    if(this.position.equals(s.position)) {
       return true;
     }
     else {
