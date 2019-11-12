@@ -53,9 +53,11 @@ class Snake {
     else { this.currentDirection = 2 }
   }
   public didCollide(s) {
+    let parts = this.allParts.slice(1);
     if(this.position.equals(s.position)) {
       return true;
     }
+    
     else {
       return false;
     }
