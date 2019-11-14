@@ -12,8 +12,8 @@ class Snake {
   /**
    * Creates a snake.
    */
-  constructor() {
-    this.startPosition = new Point(1,1);
+  constructor(xcoord:number, ycoord:number) {
+    this.startPosition = new Point(xcoord, ycoord);
     this.currentParts = [this.startPosition];
     this.currentDirection = 1;
     this.size = 4;
@@ -52,12 +52,12 @@ class Snake {
     else if(this.currentDirection === 3) { this.currentDirection = 4 }
     else { this.currentDirection = 2 }
   }
+  
   public didCollide(s) {
-    let parts = this.allParts.slice(1);
-    if(this.position.equals(s.position)) {
+    let parts = s.allParts.slice(1);
+    if((this === s && parts.some(x => this.position === x)) || (this !== s && (this.position.equals(s.position) || parts.some(x => this.position === x)))) {
       return true;
     }
-    
     else {
       return false;
     }

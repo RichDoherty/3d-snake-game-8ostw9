@@ -55,11 +55,11 @@ render(<App />, document.getElementById('root'));
 // Add display statements below
 display("Let's get started with React TypeScript!");
 
-let snakeTest = new Snake();
+let snakeTest = new Snake(5,6);
 let world = new WorldModel();
 world.addSnake(snakeTest);
 
-let avoidSnake = new Snake();
+let avoidSnake = new Snake(5,5);
 world.addSnake(avoidSnake);
 
 let canvasTest = new CanvasView(20);
@@ -74,5 +74,8 @@ let hPlayer = new HumanPlayer(sControl, lrIh);
 let aPlayer = new AvoidWallsPlayer(sControl2);
 gControl.player1 = hPlayer;
 gControl.player2 = aPlayer;
+
+display(world.snakeList[0].didCollide(world.snakeList[1]));
+display(world.snakeList[1].didCollide(world.snakeList[0]));
 
 //gControl.run();
