@@ -24,6 +24,7 @@ class WorldModel {
    * @param steps - The number of spaces the snake will move.
    */
   public update(steps:number) {
+    let deadSnakes = [];
     for(let i = 0; i < this.allSnakes.length; i++) {
       this.allSnakes[i].move(steps);
     }

@@ -59,7 +59,7 @@ let snakeTest = new Snake(5,6);
 let world = new WorldModel();
 world.addSnake(snakeTest);
 
-let avoidSnake = new Snake(8,5);
+let avoidSnake = new Snake(3,6);
 world.addSnake(avoidSnake);
 
 let canvasTest = new CanvasView(20);
@@ -78,4 +78,25 @@ gControl.player2 = aPlayer;
 display(world.snakeList[0].didCollide(world.snakeList[1]));
 display(world.snakeList[1].didCollide(world.snakeList[0]));
 
-gControl.run();
+
+console.log(world.snakeList[0].position);
+let parts1 = world.snakeList[0].allParts.slice(1);
+console.log(parts1);
+console.log(parts1[0]);
+console.log(parts1[1]);
+console.log(parts1[2]);
+
+console.log("");
+
+console.log(world.snakeList[1].position);
+let parts2 = world.snakeList[1].allParts.slice(1);
+console.log(parts2);
+console.log(parts2[0]);
+console.log(parts2[1]);
+console.log(parts2[2]);
+
+console.log("");
+
+console.log(parts1.some(part => part.x === world.snakeList[1].position.x && part.y === world.snakeList[1].position.y));
+
+//gControl.run();

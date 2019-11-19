@@ -9,25 +9,25 @@ class AvoidWallsPlayer extends Player {
     super(controller);
   }
   public makeTurn() {
-    if(this.sc.snakeDirection === 1 && this.sc.snakePosition.y === this.sc.height-1 && this.sc.snakePosition.x < this.sc.width/2) {
+    if(this.sc.snakeDirection === 1 && this.sc.snakePosition.y === this.sc.height-1 && this.sc.snakePosition.x <= this.sc.width/2) {
         this.sc.turnSnakeLeft();
     }
     else if(this.sc.snakeDirection === 1 && this.sc.snakePosition.y === this.sc.height-1 && this.sc.snakePosition.x > this.sc.width/2) {
         this.sc.turnSnakeRight();
     }
-    else if(this.sc.snakeDirection === 2 && this.sc.snakePosition.x === 0 && this.sc.snakePosition.y < this.sc.height/2) {
+    else if(this.sc.snakeDirection === 2 && this.sc.snakePosition.x === 0 && this.sc.snakePosition.y <= this.sc.height/2) {
         this.sc.turnSnakeLeft(); 
       }
     else if(this.sc.snakeDirection === 2 && this.sc.snakePosition.x === 0 && this.sc.snakePosition.y > this.sc.height/2) {
         this.sc.turnSnakeRight(); 
       }
-    else if(this.sc.snakeDirection === 3 && this.sc.snakePosition.x === this.sc.width-1 && this.sc.snakePosition.y < this.sc.height/2) {
+    else if(this.sc.snakeDirection === 3 && this.sc.snakePosition.x === this.sc.width-1 && this.sc.snakePosition.y <= this.sc.height/2) {
         this.sc.turnSnakeRight();
     }
     else if(this.sc.snakeDirection === 3 && this.sc.snakePosition.x === this.sc.width-1 && this.sc.snakePosition.y > this.sc.height/2) {
         this.sc.turnSnakeLeft();
     }
-    else if(this.sc.snakeDirection === 4 && this.sc.snakePosition.y === 0 && this.sc.snakePosition.x < this.sc.width/2) {
+    else if(this.sc.snakeDirection === 4 && this.sc.snakePosition.y === 0 && this.sc.snakePosition.x <= this.sc.width/2) {
         this.sc.turnSnakeRight();
     }
     else if(this.sc.snakeDirection === 4 && this.sc.snakePosition.y === 0 && this.sc.snakePosition.x > this.sc.width/2) {
