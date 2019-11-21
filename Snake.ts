@@ -56,10 +56,10 @@ class Snake {
   public didCollide(s) {
     let parts = s.allParts.slice(1);
     if(this !== s) {
-      return parts.some(part => this.position.equals(part)) || this.position.equals(s.position);
+      return parts.some(this.position.equals) || this.position.equals(s.position);
     }
     else {
-      return parts.some(part => this.position.equals(part));
+      return parts.some(this.position.equals);
     }
   }
   /**

@@ -33,7 +33,7 @@ class WorldModel {
         this.allViews[i].display(this); 
       }
     }
-    for(let i = 0; i < this.allSnakes.length; i++) {
+    /*for(let i = 0; i < this.allSnakes.length; i++) {
       for(let j = 0; j < this.allSnakes.length; j++) {
         if(this.allSnakes[i].didCollide(this.allSnakes[j]) && !(deadSnakes.some(snake => snake === this.allSnakes[i]))) {
           deadSnakes.push(this.allSnakes[i]);
@@ -43,10 +43,10 @@ class WorldModel {
     for(let i = 0; i < deadSnakes.length; i++) {
       for(let j = 0; j < this.allSnakes.length; j++) {
         if(deadSnakes[i] === this.allSnakes[j]) {
-          this.allSnakes.splice(j, 1);
+          //this.allSnakes.splice(j, 1);
         }
       }
-    }
+    }*/
   }
   /**
    * Gets the list of snakes.
