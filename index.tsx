@@ -78,7 +78,7 @@ gControl.player2 = aPlayer;
 display(world.snakeList[0].didCollide(world.snakeList[1]));
 display(world.snakeList[1].didCollide(world.snakeList[0]));
 
-
+/*
 console.log(world.snakeList[0].position);
 let parts1 = world.snakeList[0].allParts.slice(1);
 console.log(parts1);
@@ -98,5 +98,6 @@ console.log(parts2[2]);
 console.log("");
 
 console.log(parts1.some(part => part.x === world.snakeList[1].position.x && part.y === world.snakeList[1].position.y));
+*/
 
 //gControl.run();

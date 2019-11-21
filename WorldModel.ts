@@ -24,13 +24,27 @@ class WorldModel {
    * @param steps - The number of spaces the snake will move.
    */
   public update(steps:number) {
-    let deadSnakes = [];
+    let deadSnakes: Snake[] = [];
     for(let i = 0; i < this.allSnakes.length; i++) {
       this.allSnakes[i].move(steps);
     }
     for(let i = 0; i < this.allViews.length; i++) {
       if(this.allViews[i] !== null) { 
         this.allViews[i].display(this); 
+      }
+    }
+    for(let i = 0; i < this.allSnakes.length; i++) {
+      for(let j = 0; j < this.allSnakes.length; j++) {
+        if(this.allSnakes[i].didCollide(this.allSnakes[j]) && !(deadSnakes.some(snake => snake === this.allSnakes[i]))) {
+          deadSnakes.push(this.allSnakes[i]);
+        }
+      }
+    }
+    for(let i = 0; i < deadSnakes.length; i++) {
+      for(let j = 0; j < this.allSnakes.length; j++) {
+        if(deadSnakes[i] === this.allSnakes[j]) {
+          this.allSnakes.splice(j,j+1);
+        }
       }
     }
   }
