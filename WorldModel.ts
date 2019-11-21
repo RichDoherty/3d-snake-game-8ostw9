@@ -43,10 +43,11 @@ class WorldModel {
     for(let i = 0; i < deadSnakes.length; i++) {
       for(let j = 0; j < this.allSnakes.length; j++) {
         if(deadSnakes[i] === this.allSnakes[j]) {
-          this.allSnakes.splice(j,j+1);
+          this.allSnakes.splice(j, 1);
         }
       }
     }
+    console.log(deadSnakes);
   }
   /**
    * Gets the list of snakes.
