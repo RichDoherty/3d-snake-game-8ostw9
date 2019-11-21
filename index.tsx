@@ -100,4 +100,4 @@ console.log("");
 console.log(parts1.some(part => part.x === world.snakeList[1].position.x && part.y === world.snakeList[1].position.y));
 */
 
-gControl.run();
+//gControl.run();

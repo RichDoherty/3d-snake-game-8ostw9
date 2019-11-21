@@ -47,7 +47,6 @@ class WorldModel {
         }
       }
     }
-    console.log(deadSnakes);
   }
   /**
    * Gets the list of snakes.
