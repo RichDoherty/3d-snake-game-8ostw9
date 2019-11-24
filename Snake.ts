@@ -18,7 +18,7 @@ class Snake {
     this.currentDirection = 1;
     this.size = 4;
     for(let i = 0; i < this.size-1; i++) {
-      this.currentParts.push(new Point(this.currentParts[i].x, this.currentParts[i].y +  1));
+      this.currentParts.push(new Point(this.currentParts[i].x, this.currentParts[i].y - 1));
     }
   }
   /**
@@ -56,10 +56,10 @@ class Snake {
   public didCollide(s) {
     let parts = s.allParts.slice(1);
     if(this !== s) {
-      return parts.some(this.position.equals) || this.position.equals(s.position);
+      return parts.some(this.position.equals.bind(this.position)) || this.position.equals(s.position);
     }
     else {
-      return parts.some(this.position.equals);
+      return parts.some(this.position.equals.bind(this.position));
     }
   }
   /**
