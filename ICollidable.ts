@@ -5,3 +5,5 @@ import Actor from './IActor';
 interface Collidable extends Actor {
   didCollide: () => boolean;
 }
+
+export default ICollidable;

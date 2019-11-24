@@ -1,14 +1,16 @@
 import display from './display';
 import Point from './Point';
+import Collidable from './ICollidable'
 
 // place your code on line 5 above the export statement below
 
 /** Class representing a snake. */
-class Snake {
+class Snake implements Collidable {
   private currentParts: Point[];
   private currentDirection: number;
   private startPosition: Point;
   private size: number;
+  private isCurrentlyActive: boolean;
   /**
    * Creates a snake.
    */
@@ -17,6 +19,7 @@ class Snake {
     this.currentParts = [this.startPosition];
     this.currentDirection = 1;
     this.size = 4;
+    this.isCurrentlyActive = true;
     for(let i = 0; i < this.size-1; i++) {
       this.currentParts.push(new Point(this.currentParts[i].x, this.currentParts[i].y - 1));
     }
@@ -55,13 +58,39 @@ class Snake {
   
   public didCollide(s) {
     let parts = s.allParts.slice(1);
-    if(this !== s) {
+    if(!(s.type === "snake")) {
+      return this.position.equals(s.position);
+    }
+    else if(this !== s) {
       return parts.some(this.position.equals.bind(this.position)) || this.position.equals(s.position);
     }
     else {
       return parts.some(this.position.equals.bind(this.position));
     }
   }
+
+  public update() {
+    this.move(1);
+  }
+
+  public die() {
+    this.isCurrentlyActive = false;
+  }
+
+  public grow() {
+    if(this.currentDirection === 1) {
+      this.allParts.push(new Point(this.position.x, this.position.y - 1));
+    }
+    else if(this.currentDirection === 4) {
+      this.allParts.push(new Point(this.position.x, this.position.y + 1));
+    }
+    else if(this.currentDirection === 2) {
+      this.allParts.push(new Point(this.position.x + 1, this.position.y));
+    }
+    else if(this.currentDirection === 3) {
+      this.allParts.push(new Point(this.position.x - 1, this.position.y));
+    }
+  } 
   /**
    * Gets the point the snake is currently at.
    */
@@ -73,6 +102,14 @@ class Snake {
    */
   public get direction() {
     return this.currentDirection;
+  }
+
+  public get isActive() {
+    return this.isCurrentlyActive;
+  }
+
+  public get type() {
+    return "snake";
   }
 
   public get allParts() {

@@ -14,7 +14,7 @@ class Food implements Actor {
     this.isCurrentlyActive = false;
   }
   public update() {
-    
+
   }
   public get position() {
     return this.currentPosition;
@@ -26,3 +26,5 @@ class Food implements Actor {
     return "food";
   }
 }
+
+export default Food;
