@@ -4,6 +4,7 @@ import WorldModel from './WorldModel';
 import SnakeController from './SnakeController'
 import Player from './Player';
 import View from './IView';
+import ArrayIterator from './ArrayIterator'
 
 /** Class that adds a canvas for the game to be played on. */
 class CanvasView implements View {
@@ -28,10 +29,15 @@ class CanvasView implements View {
     this.canvas.width = w.width * this.scaler;
     this.canvas.height = w.height * this.scaler;
     this.context.fillStyle = "lavender";
-    for(let i = 0; i < w.actorList.length; i++) {
+    const it = w.actorList;
+    let itemPair = w.actorList.next();
+    for( ; !itemPair.done ; ) {
+      this.context.fillRect(w.actorList[itemPair.value].x * this.scaler, w.actorList[itemPair.value].y, this.scaler, this.scaler)
+      /*
       for(let j = 0; j < w.actorList[i].allParts.length; j++) {
         this.context.fillRect(w.actorList[i].allParts[j].x * this.scaler, w.actorList[i].allParts[j].y * this.scaler, this.scaler, this.scaler);
       }
+      */
     }
   }
 }
