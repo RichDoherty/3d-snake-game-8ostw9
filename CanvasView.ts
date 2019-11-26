@@ -30,9 +30,10 @@ class CanvasView implements View {
     this.canvas.height = w.height * this.scaler;
     this.context.fillStyle = "lavender";
     const it = w.actorList;
-    let itemPair = w.actorList.next();
+    let itemPair = it.next();
     for( ; !itemPair.done ; ) {
-      this.context.fillRect(w.actorList[itemPair.value].allParts.x * this.scaler, w.actorList[itemPair.value].allParts.y * this.scaler, this.scaler, this.scaler)
+      this.context.fillRect(itemPair.value.allParts.x * this.scaler, itemPair.value.allParts.y * this.scaler, this.scaler, this.scaler);
+      itemPair = it.next();
       /*
       for(let j = 0; j < w.actorList[i].allParts.length; j++) {
         this.context.fillRect(w.actorList[i].allParts[j].x * this.scaler, w.actorList[i].allParts[j].y * this.scaler, this.scaler, this.scaler);
