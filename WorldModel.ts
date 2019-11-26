@@ -12,7 +12,7 @@ import ArrayIterator from './ArrayIterator';
 
 /** Class representing the game world. */
 class WorldModel {
-  private actors: Snake[];
+  private actors: Actor[];
   private worldWidth: number;
   private worldHeight: number;
   private allViews: View[];
