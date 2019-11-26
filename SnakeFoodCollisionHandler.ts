@@ -9,3 +9,5 @@ class SnakeFoodCollisionHandler implements CollisionHandler {
     snake.grow();
   }
 }
+
+export default SnakeFoodCollisionHandler;
