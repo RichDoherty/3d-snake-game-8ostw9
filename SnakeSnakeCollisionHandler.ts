@@ -4,7 +4,7 @@ import Food from './Food';
 import CollisionHandler from './ICollisionHandler';
 
 class SnakeSnakeCollisionHandler implements CollisionHandler {
-  applyAction(snake1:Snake, snake2:Snake) {
+  public applyAction(snake1:Snake, snake2:Snake) {
     snake1.die();
   }
 }
