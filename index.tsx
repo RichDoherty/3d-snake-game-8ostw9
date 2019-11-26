@@ -14,6 +14,9 @@ import HumanPlayer from './HumanPlayer';
 import InputHandler from './IInputHandler';
 import LRInputHandler from './LRInputHandler';
 import AvoidWallsPlayer from './AvoidWallsPlayer';
+import ActorCollisionHandlers from './ActorCollisionHandlers';
+import SnakeFoodCollisionHandler from './SnakeFoodCollisionHandler';
+import SnakeSnakeCollisionHandler from './SnakeSnakeCollisionHandler';
 
 interface AppProps { }
 interface AppState {
@@ -56,7 +59,12 @@ render(<App />, document.getElementById('root'));
 display("Let's get started with React TypeScript!");
 
 let snakeTest = new Snake(5,6);
-let world = new WorldModel();
+let ActorCollision = new ActorCollisionHandlers();
+let SnakeFoodCollision = new SnakeFoodCollisionHandler();
+let SnakeSnakeCollision = new SnakeSnakeCollisionHandler()
+ActorCollision.addCollisionAction("snake", "food", SnakeFoodCollision);
+ActorCollision.addCollisionAction("snake", "snake", SnakeSnakeCollision);
+let world = new WorldModel(ActorCollision);
 world.addSnake(snakeTest);
 
 let avoidSnake = new Snake(2,6);
