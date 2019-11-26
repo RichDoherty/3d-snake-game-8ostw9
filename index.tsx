@@ -83,9 +83,10 @@ let aPlayer = new AvoidWallsPlayer(sControl2);
 gControl.player1 = hPlayer;
 gControl.player2 = aPlayer;
 
+/*
 display(world.actorList[0].didCollide(world.actorList[1]));
 display(world.actorList[1].didCollide(world.actorList[0]));
-
+*/
 /*
 console.log(world.snakeList[0].position);
 let parts1 = world.snakeList[0].allParts.slice(1);
