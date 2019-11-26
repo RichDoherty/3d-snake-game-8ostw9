@@ -66,8 +66,8 @@ let canvasTest = new CanvasView(20);
 world.addView(canvasTest);
 canvasTest.display(world);
 
-let sControl = new SnakeController(world, world.snakeList[0]);
-let sControl2 = new SnakeController(world, world.snakeList[1]);
+let sControl = new SnakeController(world, world.actorList[0]);
+let sControl2 = new SnakeController(world, world.actorList[1]);
 let gControl = new GameController(world);
 let lrIh = new LRInputHandler;
 let hPlayer = new HumanPlayer(sControl, lrIh);
@@ -75,8 +75,8 @@ let aPlayer = new AvoidWallsPlayer(sControl2);
 gControl.player1 = hPlayer;
 gControl.player2 = aPlayer;
 
-display(world.snakeList[0].didCollide(world.snakeList[1]));
-display(world.snakeList[1].didCollide(world.snakeList[0]));
+display(world.actorList[0].didCollide(world.actorList[1]));
+display(world.actorList[1].didCollide(world.actorList[0]));
 
 /*
 console.log(world.snakeList[0].position);

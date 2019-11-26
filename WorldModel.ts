@@ -3,18 +3,24 @@ import Point from './Point';
 import Snake from './Snake';
 import View from './IView';
 import CanvasView from './CanvasView';
+import Actor from './IActor';
+import CollisionHandler from './ICollisionHandler';
+import SnakeFoodCollisionHandler from './SnakeFoodCollisionHandler';
+import SnakeSnakeCollisionHandler from './SnakeSnakeCollisionHandler';
+import ActorCollisionHandlers from './ActorCollisionHandlers';
+import ArrayIterator from './ArrayIterator';
 
 /** Class representing the game world. */
 class WorldModel {
-  private allSnakes: Snake[];
+  private actors: Snake[];
   private worldWidth: number;
   private worldHeight: number;
   private allViews: View[];
   /**
    * Creates a world model.
    */
-  constructor() {
-    this.allSnakes = [];
+  constructor(aca) {
+    this.actors = [];
     this.worldWidth = 10;
     this.worldHeight = 20;
     this.allViews = [];
@@ -25,25 +31,25 @@ class WorldModel {
    */
   public update(steps:number) {
     let deadSnakes: Snake[] = [];
-    for(let i = 0; i < this.allSnakes.length; i++) {
-      this.allSnakes[i].move(steps);
+    for(let i = 0; i < this.actors.length; i++) {
+      this.actors[i].move(steps);
     }
     for(let i = 0; i < this.allViews.length; i++) {
       if(this.allViews[i] !== null) { 
         this.allViews[i].display(this); 
       }
     }
-    for(let i = 0; i < this.allSnakes.length; i++) {
-      for(let j = 0; j < this.allSnakes.length; j++) {
-        if(this.allSnakes[i].didCollide(this.allSnakes[j]) && !(deadSnakes.some(snake => snake === this.allSnakes[i]))) {
-          deadSnakes.push(this.allSnakes[i]);
+    for(let i = 0; i < this.actors.length; i++) {
+      for(let j = 0; j < this.actors.length; j++) {
+        if(this.actors[i].didCollide(this.actors[j]) && !(deadSnakes.some(snake => snake === this.actors[i]))) {
+          deadSnakes.push(this.actors[i]);
         }
       }
     }
     for(let i = 0; i < deadSnakes.length; i++) {
-      for(let j = 0; j < this.allSnakes.length; j++) {
-        if(deadSnakes[i] === this.allSnakes[j]) {
-          this.allSnakes.splice(j, 1);
+      for(let j = 0; j < this.actors.length; j++) {
+        if(deadSnakes[i] === this.actors[j]) {
+          this.actors.splice(j, 1);
         }
       }
     }
@@ -51,8 +57,8 @@ class WorldModel {
   /**
    * Gets the list of snakes.
    */
-  public get snakeList() {
-    return this.allSnakes;
+  public get actorList() {
+    return new ArrayIterator(this.actors);
   }
   /**
    * Gets the width of the world.
@@ -70,7 +76,7 @@ class WorldModel {
    * Adds a new snake to the list of snakes.
    */
   public addSnake(newSnake:Snake) {
-    this.allSnakes.push(newSnake);
+    this.actors.push(newSnake);
   }
   /**
    * Adds a new view to the list of views.
