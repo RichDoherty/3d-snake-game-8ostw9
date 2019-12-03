@@ -53,6 +53,7 @@ class WorldModel {
         }
       }
     }
+    
   }
   /**
    * Gets the list of snakes.

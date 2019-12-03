@@ -17,6 +17,7 @@ import AvoidWallsPlayer from './AvoidWallsPlayer';
 import ActorCollisionHandlers from './ActorCollisionHandlers';
 import SnakeFoodCollisionHandler from './SnakeFoodCollisionHandler';
 import SnakeSnakeCollisionHandler from './SnakeSnakeCollisionHandler';
+import ArrayIterator from './ArrayIterator';
 
 interface AppProps { }
 interface AppState {
@@ -115,3 +116,8 @@ console.log(parts1.some(part => part.x === world.snakeList[1].position.x && part
 //gControl.run();
 
 //canvasTest.dispose()
+
+let array = [1, 2, 3, 4, 5];
+let iterator = new ArrayIterator(array);
+
+let itemPair2 = iterator.next();
