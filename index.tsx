@@ -74,7 +74,10 @@ let canvasTest = new CanvasView(20);
 world.addView(canvasTest);
 canvasTest.display(world);
 
-let sControl = new SnakeController(world, world.actorList[0]);
+const it = world.actorList;
+let itemPair = it.next();
+
+let sControl = new SnakeController(world, itemPair.value);
 let sControl2 = new SnakeController(world, world.actorList[1]);
 let gControl = new GameController(world);
 let lrIh = new LRInputHandler;
@@ -110,3 +113,5 @@ console.log(parts1.some(part => part.x === world.snakeList[1].position.x && part
 */
 
 //gControl.run();
+
+//canvasTest.dispose()

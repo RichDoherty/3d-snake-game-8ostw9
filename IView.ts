@@ -6,6 +6,7 @@ import SnakeController from './SnakeController'
 /** Interface for views */
 interface View {
   display: (w:WorldModel) => void;
+  dispose: () => void;
 }
 
 export default View;

@@ -41,6 +41,9 @@ class CanvasView implements View {
       */
     }
   }
+  public dispose() {
+    document.body.removeChild(this.canvas);
+  }
 }
 
 export default CanvasView;
