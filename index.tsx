@@ -121,3 +121,7 @@ let array = [1, 2, 3, 4, 5];
 let iterator = new ArrayIterator(array);
 
 let itemPair2 = iterator.next();
+for( ; !itemPair2.done ; ) {
+  display(itemPair2.value);
+  iterator.next();
+}
