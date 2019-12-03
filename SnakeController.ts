@@ -51,6 +51,10 @@ class SnakeController {
   public get height() {
     return this.snakeWorld.height;
   }
+
+  public get isSnakeActive() {
+    return this.slitherer.isActive;
+  }
 }
 
 export default SnakeController;
