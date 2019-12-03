@@ -118,10 +118,10 @@ console.log(parts1.some(part => part.x === world.snakeList[1].position.x && part
 //canvasTest.dispose()
 
 let array = [1, 2, 3, 4, 5];
-const iterator = new ArrayIterator(array);
+const iterate = new ArrayIterator(array);
 
-let itemPair2 = iterator.next();
-while(!itemPair2.done) {
-  display(itemPair2.value);
-  itemPair = iterator.next();
+let pair = iterate.next();
+while(!pair.done) {
+  display(pair.value);
+  pair = iterate.next();
 }
