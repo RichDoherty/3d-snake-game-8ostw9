@@ -55,6 +55,14 @@ class WorldModel {
     }
     
   }
+
+  public reset() {
+    for(let i = 0; i < this.allViews.length; i++) {
+      this.allViews[i].dispose();
+    }
+    this.actors = [];
+    this.allViews = [];
+  }
   /**
    * Gets the list of snakes.
    */
