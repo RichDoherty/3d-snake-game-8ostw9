@@ -75,10 +75,10 @@ let canvasTest = new CanvasView(20);
 world.addView(canvasTest);
 canvasTest.display(world);
 
-const it = world.actorList;
-let itemPair = it.next();
+//const it = world.actorList;
+//let itemPair = it.next();
 
-let sControl = new SnakeController(world, itemPair.value);
+let sControl = new SnakeController(world,  world.actorList[0]);
 let sControl2 = new SnakeController(world, world.actorList[1]);
 let gControl = new GameController(world);
 let lrIh = new LRInputHandler;
@@ -122,6 +122,6 @@ const iterate = new ArrayIterator(array);
 
 let pair = iterate.next();
 while(!pair.done) {
-  display(pair.value);
+  console.log(pair.value);
   pair = iterate.next();
 }
