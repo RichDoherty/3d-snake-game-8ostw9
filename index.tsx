@@ -75,10 +75,11 @@ let canvasTest = new CanvasView(20);
 world.addView(canvasTest);
 canvasTest.display(world);
 
-//const it = world.actorList;
-//let itemPair = it.next();
+const it = world.actorList;
+let itemPair = it.next();
+console.log(world.actorList);
 
-let sControl = new SnakeController(world,  world.actorList[0]);
+let sControl = new SnakeController(world, itemPair.value);
 let sControl2 = new SnakeController(world, world.actorList[1]);
 let gControl = new GameController(world);
 let lrIh = new LRInputHandler;
@@ -117,6 +118,7 @@ console.log(parts1.some(part => part.x === world.snakeList[1].position.x && part
 
 //canvasTest.dispose()
 
+/*
 let nums = [1, 2, 3, 4, 5];
 const iterate = new ArrayIterator(nums);
 
@@ -125,3 +127,4 @@ while(!pair.done) {
   console.log(pair.value);
   pair = iterate.next();
 }
+*/
