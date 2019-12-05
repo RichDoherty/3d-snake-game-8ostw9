@@ -78,6 +78,11 @@ canvasTest.display(world);
 const it = world.actorList;
 let itemPair = it.next();
 console.log(world.actorList);
+console.log(itemPair);
+itemPair = it.next();
+console.log(itemPair);
+itemPair = it.next();
+console.log(itemPair);
 
 let sControl = new SnakeController(world, itemPair.value);
 let sControl2 = new SnakeController(world, world.actorList[1]);
