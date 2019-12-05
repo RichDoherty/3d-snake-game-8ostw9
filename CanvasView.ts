@@ -28,17 +28,18 @@ class CanvasView implements View {
     this.context.fillStyle = this.canvas.color;
     this.canvas.width = w.width * this.scaler;
     this.canvas.height = w.height * this.scaler;
-    this.context.fillStyle = "lavender";
     const it = w.actorList;
     let itemPair = it.next();
     while(!itemPair.done) {
       if(itemPair.value.type === "snake") {
+        this.context.fillStyle = "cyan";
         for(let i = 0; i < itemPair.value.allParts.length; i++) {
         this.context.fillRect(itemPair.value.allParts[i].x * this.scaler, itemPair.value.allParts[i].y * this.scaler, this.scaler, this.scaler);
         }
       }
-      else {
-        this.context.fillRect(itemPair.value.x * this.scaler, itemPair.value.y * this.scaler, this.scaler, this.scaler);
+      else if(itemPair.value.type === "food") {
+        this.context.fillStyle = "pink";
+        this.context.fillRect(itemPair.value.position.x * this.scaler, itemPair.value.position.y * this.scaler, this.scaler, this.scaler);
       }
       itemPair = it.next();
     }

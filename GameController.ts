@@ -3,18 +3,28 @@ import Snake from './Snake';
 import WorldModel from './WorldModel';
 import SnakeController from './SnakeController'
 import Player from './Player';
+import ActorCollisionHandlers from './ActorCollisionHandlers';
+import SnakeFoodCollisionHandler from './SnakeFoodCollisionHandler';
+import SnakeSnakeCollisionHandler from './SnakeSnakeCollisionHandler';
 
 /** Class that sets players and runs the game */
 class GameController {
   private worldModel:WorldModel;
   private p1: Player;
   private p2: Player;
+  private game;
   /**
    * Initiaizes the game world.
    * @param w - WorldModel that is being used.
    */
-  constructor(w:WorldModel) {
-    this.worldModel = w;
+  constructor(g) {
+    this.game = g;
+    let ActorCollision = new ActorCollisionHandlers();
+    let SnakeFoodCollision = new SnakeFoodCollisionHandler();
+    let SnakeSnakeCollision = new SnakeSnakeCollisionHandler()
+    ActorCollision.addCollisionAction("snake", "food", SnakeFoodCollision);
+    ActorCollision.addCollisionAction("snake", "snake", SnakeSnakeCollision);
+    this.worldModel = new WorldModel(ActorCollision);
   }
   /**
    * Sets Player 1 as a human player or ai.
@@ -29,6 +39,10 @@ class GameController {
    */
   public set player2(newPlayer:Player) {
     this.p2 = newPlayer;
+  }
+
+  init(data) {
+    
   }
   /**
    * Runs the game.
