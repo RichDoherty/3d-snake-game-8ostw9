@@ -9,6 +9,7 @@ import SnakeFoodCollisionHandler from './SnakeFoodCollisionHandler';
 import SnakeSnakeCollisionHandler from './SnakeSnakeCollisionHandler';
 import ActorCollisionHandlers from './ActorCollisionHandlers';
 import ArrayIterator from './ArrayIterator';
+import Food from './Food';
 
 /** Class representing the game world. */
 class WorldModel {
@@ -53,7 +54,9 @@ class WorldModel {
         }
       }
     }
-    
+    if(this.actors.filter(act => act.type === "food").length === 0) {
+      let newFood = new Food(Math.floor(this.worldWidth*Math.random()),Math.floor(this.worldHeight*Math.random()));
+    }
   }
 
   public reset() {
