@@ -38,7 +38,7 @@ class CanvasView implements View {
         }
       }
       else if(itemPair.value.type === "food") {
-        this.context.fillStyle = "pink";
+        this.context.fillStyle = "magenta";
         this.context.fillRect(itemPair.value.position.x * this.scaler, itemPair.value.position.y * this.scaler, this.scaler, this.scaler);
       }
       itemPair = it.next();
