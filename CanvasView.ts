@@ -32,8 +32,13 @@ class CanvasView implements View {
     const it = w.actorList;
     let itemPair = it.next();
     while(!itemPair.done) {
-      for(let i = 0; i < itemPair.value.allParts.length; i++) {
-      this.context.fillRect(itemPair.value.allParts[i].x * this.scaler, itemPair.value.allParts[i].y * this.scaler, this.scaler, this.scaler);
+      if(itemPair.value.type === "snake") {
+        for(let i = 0; i < itemPair.value.allParts.length; i++) {
+        this.context.fillRect(itemPair.value.allParts[i].x * this.scaler, itemPair.value.allParts[i].y * this.scaler, this.scaler, this.scaler);
+        }
+      }
+      else {
+        this.context.fillRect(itemPair.value.x * this.scaler, itemPair.value.y * this.scaler, this.scaler, this.scaler);
       }
       itemPair = it.next();
     }
