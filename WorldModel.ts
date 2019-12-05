@@ -88,7 +88,7 @@ class WorldModel {
   /**
    * Adds a new snake to the list of snakes.
    */
-  public addSnake(newSnake:Snake) {
+  public addSnake(newSnake:Actor) {
     this.actors.push(newSnake);
   }
   /**
