@@ -34,11 +34,6 @@ class CanvasView implements View {
     for( ; !itemPair.done ; ) {
       this.context.fillRect(itemPair.value.allParts.x * this.scaler, itemPair.value.allParts.y * this.scaler, this.scaler, this.scaler);
       itemPair = it.next();
-      /*
-      for(let j = 0; j < w.actorList[i].allParts.length; j++) {
-        this.context.fillRect(w.actorList[i].allParts[j].x * this.scaler, w.actorList[i].allParts[j].y * this.scaler, this.scaler, this.scaler);
-      }
-      */
     }
   }
   public dispose() {
