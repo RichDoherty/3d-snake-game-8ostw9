@@ -47,6 +47,7 @@ class WorldModel {
         }
         else if(this.actors[i].type === "snake" && this.actors[j].type === "food" && this.actors[i].didCollide(this.actors[j]) && !(deadSnakes.some(snake => snake === this.actors[i]))) {
           this.actors.splice(j, 1);
+          this.actors[i].grow();
         }
       }
     }
