@@ -57,14 +57,15 @@ class Snake implements Collidable {
   }
   
   public didCollide(s) {
-    let parts = s.allParts.slice(1);
-    if(!(s.type === "snake")) {
+    if(s.type !== "snake") {
       return this.position.equals(s.position);
     }
     else if(this !== s) {
+      let parts = s.allParts.slice(1);
       return parts.some(this.position.equals.bind(this.position)) || this.position.equals(s.position);
     }
     else {
+      let parts = s.allParts.slice(1);
       return parts.some(this.position.equals.bind(this.position));
     }
   }

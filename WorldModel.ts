@@ -33,7 +33,7 @@ class WorldModel {
   public update(steps:number) {
     let deadSnakes: Snake[] = [];
     for(let i = 0; i < this.actors.length; i++) {
-      this.actors[i].move(steps);
+      this.actors[i].update();
     }
     for(let i = 0; i < this.allViews.length; i++) {
       if(this.allViews[i] !== null) { 
@@ -42,8 +42,11 @@ class WorldModel {
     }
     for(let i = 0; i < this.actors.length; i++) {
       for(let j = 0; j < this.actors.length; j++) {
-        if(this.actors[i].didCollide(this.actors[j]) && !(deadSnakes.some(snake => snake === this.actors[i]))) {
+        if(this.actors[i].type === "snake" && this.actors[j].type === "snake" && this.actors[i].didCollide(this.actors[j]) && !(deadSnakes.some(snake => snake === this.actors[i]))) {
           deadSnakes.push(this.actors[i]);
+        }
+        else if(this.actors[i].type === "snake" && this.actors[j].type === "food" && this.actors[i].didCollide(this.actors[j]) && !(deadSnakes.some(snake => snake === this.actors[i]))) {
+          this.actors.splice(j, 1);
         }
       }
     }

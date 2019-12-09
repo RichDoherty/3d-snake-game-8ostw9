@@ -17,14 +17,14 @@ class GameController {
    * Initiaizes the game world.
    * @param w - WorldModel that is being used.
    */
-  constructor(g) {
-    this.game = g;
+  constructor(w) {
+    //this.game = g;
     let ActorCollision = new ActorCollisionHandlers();
     let SnakeFoodCollision = new SnakeFoodCollisionHandler();
     let SnakeSnakeCollision = new SnakeSnakeCollisionHandler()
     ActorCollision.addCollisionAction("snake", "food", SnakeFoodCollision);
     ActorCollision.addCollisionAction("snake", "snake", SnakeSnakeCollision);
-    this.worldModel = new WorldModel(ActorCollision);
+    this.worldModel = w;
   }
   /**
    * Sets Player 1 as a human player or ai.
