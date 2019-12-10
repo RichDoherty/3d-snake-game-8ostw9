@@ -72,10 +72,9 @@ world.addSnake(snakeTest);
 let avoidSnake = new Snake(2,6);
 world.addSnake(avoidSnake);
 
-let newFood = new Food(7, 11);
-world.addSnake(newFood);
 
-let canvasTest = new CanvasView(20);
+
+let canvasTest = new CanvasView(25);
 world.addView(canvasTest);
 canvasTest.display(world);
 

@@ -22,7 +22,7 @@ class WorldModel {
    */
   constructor(aca) {
     this.actors = [];
-    this.worldWidth = 10;
+    this.worldWidth = 20;
     this.worldHeight = 20;
     this.allViews = [];
   }
