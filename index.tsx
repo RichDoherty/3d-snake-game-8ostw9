@@ -60,7 +60,7 @@ render(<App />, document.getElementById('root'));
 // Add display statements below
 display("Let's get started with React TypeScript!");
 
-let snakeTest = new Snake(5,6);
+let snakeTest = new Snake(10,6);
 let ActorCollision = new ActorCollisionHandlers();
 let SnakeFoodCollision = new SnakeFoodCollisionHandler();
 let SnakeSnakeCollision = new SnakeSnakeCollisionHandler()
