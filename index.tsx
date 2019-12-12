@@ -127,8 +127,4 @@ let nums = [1, 2, 3, 4, 5];
 const iterate = new ArrayIterator(nums);
 
 let pair = iterate.next();
-while(!pair.done) {
-  console.log(pair.value);
-  pair = iterate.next();
-}
 */

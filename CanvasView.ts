@@ -25,7 +25,6 @@ class CanvasView implements View {
    * Multiplies the world's width and height by the scaler and makes the snake appear on the canvas.
    */
   public display(w:WorldModel) {
-    this.context.fillStyle = this.canvas.color;
     this.canvas.width = w.width * this.scaler;
     this.canvas.height = w.height * this.scaler;
     const it = w.actorList;
